@@ -1,15 +1,23 @@
-*{
+* {
+    box-sizing: border-box;
     font-family: Roboto ,sans-serif;
     margin: 0;
     padding: 0;
-    h1{
-        font-family: Shrikhand, sans-serif;
-    }
+}
+
+// COLORS
+$color-purple: #9356dc;
+$color-pink: #FF79DA;
+$color-green: #99E2D0;
+
+// HEADER
+h1{
+    font-family: Shrikhand, sans-serif;
 }
 
 .header{
     padding: 16px;
-    border-bottom: 1px solid black;
+    box-shadow: 0 0 5px 0 grey;
     &--logo{
         text-align: center;
     }
