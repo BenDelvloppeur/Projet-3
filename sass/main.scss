@@ -1,3 +1,9 @@
+// IMPORT VARIABLES
+@import '_variable.scss';
+
+// IMPORT MIXINS
+@import '_mixins.scss';
+
 * {
     box-sizing: border-box;
     font-family: Roboto ,sans-serif;
@@ -5,21 +11,80 @@
     padding: 0;
 }
 
-// COLORS
-$color-purple: #9356dc;
-$color-pink: #FF79DA;
-$color-green: #99E2D0;
-
 // HEADER
-h1{
-    font-family: Shrikhand, sans-serif;
-}
-
-.header{
+.header {
     padding: 16px;
-    box-shadow: 0 0 5px 0 grey;
+    @include bot-boxshadow($color: $color-grey);
+    position: relative;
+    z-index: 1000;
+    
     &--logo{
         text-align: center;
+        font-family: Shrikhand, sans-serif;
     }
+}
+.geo-loc {
+    @include flex-top;
+    padding: 20px 16px;
+    background-color: $backgrey;
+
+    &--text{
+        font-size: 18px;
+        font-weight: bold;
+    }
+}
+.top-bar{
+    @include flex-top;
+    flex-direction: column;
+    @include padding-32-16;
+    &--text{
+        text-align: center;
+    }
+    &--button{
+        @include button-purple;
+    }
+}
+.nav-bar{
+    @include padding-32-16;
+    flex-direction: column;
+    &--text{
+        padding: 0 16px 32px;
+    }
+    ol{
+        @include flex-top;
+        flex-wrap: wrap;
+        align-items: center;
+    
+        list-style: none;
+        counter-reset: compteList;
+    }
+        &--list{
+            width: 28%;
+            margin: 0px 0px 0px 32px;
+            padding: 16px;
+            box-shadow: 1px 5px 11px 0px $color-grey;
+            border-radius: 16px;
+            position: relative;
+            @include responsive-list;
+            &::before {
+                counter-increment: compteList 1;
+                content: counter(compteList) " ";
+                background: #9356dc;
+                height: 1.5rem;
+                width: 1.5rem;
+                border-radius: 100px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #fff;
+                position: absolute;
+                left: -14px;             
+            }
+            }
+            i{
+                margin: 0px 16px;
+            }
+            
+        
 }
 

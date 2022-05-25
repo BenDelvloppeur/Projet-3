@@ -14,16 +14,50 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Shrikhand&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/7e78c1c0dd.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
     <header class="header">
-      <!-- Logo -->
+      
+      <!-- LOGO -->
       <h1 class="header--logo">ohmyfood</h1>
     </header>
-    <main>
-      <section>
-        
+
+    <!-- MAIN -->
+    <main class="wrapper">
+
+      <!-- LOCALISATION -->
+      <section class="geo-loc">
+        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+        <span class="geo-loc--text">Paris, Belleville</span>
+      </section>
+
+      <!-- TEXT + BUTTON -->
+      <section class="top-bar">
+        <h2 class="top-bar--text">Réservez le menu qui <br> vous convient</h2>
+        <p class="top-bar--text">Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
+        <button class="top-bar--button">Explorer nos restaurants</button>
+      </section>
+      <section class="nav-bar">
+        <h2 class="nav-bar--text">Fonctionnement</h2>
+        <ol>
+          <li class="nav-bar--list">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+            <span>Choisissez un restaurant</span>
+          </li>
+          <li class="nav-bar--list">
+            <i class="fa-list-ul fas tuto__icon" aria-hidden="true"></i>
+            <span>Composez votre menu</span>
+          </li>
+          <li class="nav-bar--list">
+            <i class="fa-store fas tuto__icon" aria-hidden="true"></i>
+            <span>Dégustez au restaurant</span>
+          </li>
+        </ol>
       </section>
     </main>
     <footer></footer>
