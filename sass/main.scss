@@ -100,6 +100,7 @@
         flex-wrap: wrap;
         gap: 32px;
         .article{
+            @include responsive-article;
             @include bot-boxshadow;
             display: flex;
             flex-direction: column;
@@ -107,27 +108,33 @@
             height: 340px;
             border-radius: 25px;
             position: relative;
+            &--link{
+                color: inherit;
+                text-decoration: none;
+            }
             &--text{
                 display: flex;
                 flex-direction: column;
-                padding: 8px;
+                padding: 10px;
                 font-size: 20px;
                 h3{
                     margin-bottom: 8px;
                 }
             }
-            i{
+            .fa-heart {
                 position: absolute;
+                font-size: 25px;
                 right: 40px;
                 bottom: 35px;
                 mix-blend-mode: lighten;
                 &:hover{
-
+                    color: $color-purple
                 }
             }
             &--img{
                 
                 img{
+                    @include responsive-img;
                     object-fit: cover;
                     width: 100%;
                     height: 250px;
@@ -137,5 +144,36 @@
         }
     }
 }
-    
+.footer {
+    background-color: $color-footer;
+    color: $color-white;
+    &--ul{
+        margin-top: 16px;
+        padding: 16px;
+        list-style: none;
+    }
+        &--logo{
+            font-size: 20px;
+            font-family: Shrikhand, sans-serif;
+            padding: 8px;
+            margin-bottom: 8px;
+        }
+        &--list{
+            margin: 10px;
+        }
+        &--link{
+            text-decoration: none;
+            color: inherit;
+            .fa-utensils{
+                margin-right: 16px;
+                margin-top: 8px;
+            }
+            .fa-handshake-angle{
+                margin-right: 10px;
+            }
+            }
+                &--link:hover{
+                    text-decoration: underline;
+                }
+}
     

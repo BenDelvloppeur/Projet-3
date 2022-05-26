@@ -80,6 +80,8 @@
 @media (max-width: 1020px) {
   .nav-bar--list {
     width: 100%;
+    min-width: 300px;
+    margin-left: 14px;
   }
 }
 .nav-bar--list::before {
@@ -126,26 +128,79 @@
   border-radius: 25px;
   position: relative;
 }
+@media (max-width: 1020px) {
+  .restaurants--cards .article {
+    width: 100%;
+    min-width: 300px;
+    height: 270px;
+  }
+}
+.restaurants--cards .article--link {
+  color: inherit;
+  text-decoration: none;
+}
 .restaurants--cards .article--text {
   display: flex;
   flex-direction: column;
-  padding: 8px;
+  padding: 10px;
   font-size: 20px;
 }
 .restaurants--cards .article--text h3 {
   margin-bottom: 8px;
 }
-.restaurants--cards .article i {
+.restaurants--cards .article .fa-heart {
   position: absolute;
+  font-size: 25px;
   right: 40px;
   bottom: 35px;
   mix-blend-mode: lighten;
+}
+.restaurants--cards .article .fa-heart:hover {
+  color: #9356dc;
 }
 .restaurants--cards .article--img img {
   object-fit: cover;
   width: 100%;
   height: 250px;
   border-radius: 25px 25px 0px 0px;
+}
+@media (max-width: 1020px) {
+  .restaurants--cards .article--img img {
+    height: 180px;
+  }
+}
+
+.footer {
+  background-color: #303030;
+  color: #ffffff;
+}
+.footer--ul {
+  margin-top: 16px;
+  padding: 16px;
+  list-style: none;
+}
+.footer--logo {
+  font-size: 20px;
+  font-family: Shrikhand, sans-serif;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+.footer--list {
+  margin: 10px;
+}
+.footer--link {
+  text-decoration: none;
+  color: inherit;
+}
+.footer--link .fa-utensils {
+  margin-right: 16px;
+  margin-top: 8px;
+}
+.footer--link .fa-handshake-angle {
+  margin-right: 10px;
+}
+.footer--link:hover {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=styles.css.map */
