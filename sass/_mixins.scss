@@ -42,4 +42,14 @@
     @media (max-width: 1020px){
         height: 180px;
     } 
-}        
+}
+@mixin responsive-pages {
+    @media (max-width: 1020px){
+        height: 280px;
+    } 
+}                
+@mixin responsive-cards {
+    @media (max-width:1020px){
+        width: 100%;
+    }
+}

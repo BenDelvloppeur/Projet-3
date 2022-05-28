@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./sass/main.scss:./css/styles.css"
+    "sass": "sass --watch ./sass/main.scss:./css/styles.css",
+    "prefix": "postcss ./css/styles.css --use autoprefixer -d ./css/prefixed/"
   },
   "repository": {
     "type": "git",
@@ -12,11 +13,15 @@
   },
   "author": "Benjamin DELVILLE",
   "license": "ISC",
+  "browserslist": "last 4 versions",
   "bugs": {
     "url": "https://github.com/BenDelvloppeur/Projet-3/issues"
   },
   "homepage": "https://github.com/BenDelvloppeur/Projet-3#readme",
   "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.14",
+    "postcss-cli": "^9.1.0",
     "sass": "^1.51.0"
   }
 }

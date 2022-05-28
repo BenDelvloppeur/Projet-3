@@ -1,3 +1,148 @@
+.footer--logo, .header--logo, .menu--title, .header-page--logo {
+  font-family: Shrikhand, sans-serif;
+}
+
+.footer--logo, .geo-loc--text {
+  font-size: 20px;
+}
+
+.footer--ul, .nav-bar--list, .header {
+  padding: 16px;
+}
+
+.footer--logo, .header--logo, .menu--title, .header-page--logo {
+  font-family: Shrikhand, sans-serif;
+}
+
+.footer--logo, .geo-loc--text {
+  font-size: 20px;
+}
+
+.footer--ul, .nav-bar--list, .header {
+  padding: 16px;
+}
+
+.header-page {
+  padding: 12px 16px;
+  position: relative;
+  z-index: 1000;
+}
+.header-page--logo {
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.header-page--logo .fa-arrow-left {
+  font-size: 24px;
+  position: absolute;
+  left: 5px;
+  top: 12px;
+  z-index: 1001;
+}
+
+.background-img img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+@media (max-width: 1020px) {
+  .background-img img {
+    height: 280px;
+  }
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+}
+.menu--contenair {
+  width: 100%;
+  position: relative;
+  top: -64px;
+  background-color: #ffffff;
+  border-radius: 32px 32px 0 0;
+  max-width: 1300px;
+  box-shadow: 0 0 8px 0 darkgrey;
+}
+.menu--div {
+  padding: 34px 16px 0px 16px;
+}
+.menu--title {
+  padding-left: 8px;
+}
+.menu i {
+  position: absolute;
+  right: 38px;
+  top: 40px;
+}
+.menu--entry {
+  padding: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  gap: 48px;
+}
+.menu--column {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+@media (max-width: 1020px) {
+  .menu--column {
+    width: 100%;
+  }
+}
+.menu--text {
+  font-size: 16px;
+  font-weight: 400;
+  padding: 8px 0px 8px 8px;
+  position: relative;
+}
+.menu--text::after {
+  content: "";
+  width: 40px;
+  height: 4px;
+  background-color: #99E2D0;
+  position: absolute;
+  left: 8px;
+  bottom: 0px;
+}
+.menu--card {
+  box-shadow: 0 0 8px 0 darkgrey;
+  position: relative;
+  padding: 8px;
+  border-radius: 10px;
+}
+.menu--card h4 {
+  padding: 2px 0;
+}
+.menu--card p {
+  font-size: 14px;
+}
+.menu--price {
+  font-size: 14px;
+  font-weight: bold;
+  color: rgb(97, 96, 96);
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+}
+.menu--center {
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+}
+.menu--center button {
+  padding: 16px 48px;
+}
+
 * {
   box-sizing: border-box;
   font-family: Roboto, sans-serif;
@@ -6,14 +151,12 @@
 }
 
 .header {
-  padding: 16px;
   box-shadow: 0 0 8px 0 darkgrey;
   position: relative;
   z-index: 1000;
 }
 .header--logo {
   text-align: center;
-  font-family: Shrikhand, sans-serif;
 }
 
 .geo-loc {
@@ -25,7 +168,6 @@
   background-color: #f3f3f3;
 }
 .geo-loc--text {
-  font-size: 18px;
   font-weight: bold;
 }
 
@@ -34,8 +176,8 @@
   justify-content: center;
   align-items: center;
   gap: 16px;
-  flex-direction: column;
   padding: 32px 16px;
+  flex-direction: column;
 }
 .top-bar--text {
   text-align: center;
@@ -72,7 +214,6 @@
 .nav-bar--list {
   width: 28%;
   margin: 0px 0px 0px 32px;
-  padding: 16px;
   box-shadow: 1px 5px 11px 0px darkgrey;
   border-radius: 16px;
   position: relative;
@@ -142,7 +283,7 @@
 .restaurants--cards .article--text {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 10px 14px;
   font-size: 20px;
 }
 .restaurants--cards .article--text h3 {
@@ -158,6 +299,9 @@
 .restaurants--cards .article .fa-heart:hover {
   color: #9356dc;
 }
+.restaurants--cards .article--img {
+  position: relative;
+}
 .restaurants--cards .article--img img {
   object-fit: cover;
   width: 100%;
@@ -169,6 +313,16 @@
     height: 180px;
   }
 }
+.restaurants--cards .article--new {
+  box-shadow: 0 0 8px 0 darkgrey;
+  font-size: 14px;
+  padding: 6px 10px;
+  position: absolute;
+  background-color: #99E2D0;
+  color: #569671;
+  right: 15px;
+  top: 15px;
+}
 
 .footer {
   background-color: #303030;
@@ -176,12 +330,9 @@
 }
 .footer--ul {
   margin-top: 16px;
-  padding: 16px;
   list-style: none;
 }
 .footer--logo {
-  font-size: 20px;
-  font-family: Shrikhand, sans-serif;
   padding: 8px;
   margin-bottom: 8px;
 }

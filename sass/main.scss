@@ -4,6 +4,12 @@
 // IMPORT MIXINS
 @import '_mixins.scss';
 
+// IMPORT EXTENSIONS
+@import '_extensions.scss';
+
+// IMPORT PAGES
+@import '_pages.scss';
+
 * {
     box-sizing: border-box;
     font-family: Roboto ,sans-serif;
@@ -11,16 +17,17 @@
     padding: 0;
 }
 
+
 // HEADER
 .header {
-    padding: 16px;
+    @extend %padding;
     @include bot-boxshadow($color: $color-grey);
     position: relative;
     z-index: 1000;
     
     &--logo{
         text-align: center;
-        font-family: Shrikhand, sans-serif;
+        @extend %fontfamily;
     }
 }
 .geo-loc {
@@ -29,14 +36,14 @@
     background-color: $backgrey;
 
     &--text{
-        font-size: 18px;
+        @extend %fontsize;
         font-weight: bold;
     }
 }
 .top-bar{
     @include flex-top;
-    flex-direction: column;
     @include padding-32-16;
+    flex-direction: column;
     &--text{
         text-align: center;
     }
@@ -58,13 +65,13 @@
         counter-reset: compteList;
     }
         &--list{
+            @include responsive-list;
+            @extend %padding;
             width: 28%;
             margin: 0px 0px 0px 32px;
-            padding: 16px;
             box-shadow: 1px 5px 11px 0px $color-grey;
             border-radius: 16px;
             position: relative;
-            @include responsive-list;
             &::before {
                 counter-increment: compteList 1;
                 content: counter(compteList) " ";
@@ -115,12 +122,14 @@
             &--text{
                 display: flex;
                 flex-direction: column;
-                padding: 10px;
+                padding: 10px 14px;
                 font-size: 20px;
                 h3{
                     margin-bottom: 8px;
                 }
             }
+
+            // ICONE HEART
             .fa-heart {
                 position: absolute;
                 font-size: 25px;
@@ -131,8 +140,10 @@
                     color: $color-purple
                 }
             }
+
+            // IMG ARTICLE
             &--img{
-                
+                position: relative;
                 img{
                     @include responsive-img;
                     object-fit: cover;
@@ -141,6 +152,18 @@
                     border-radius: 25px 25px 0px 0px;
                 }
             }
+
+            // "NOUVEAU" BUTTON
+            &--new{
+                @include bot-boxshadow;
+                font-size: 14px;
+                padding: 6px 10px;
+                position: absolute;
+                background-color: $color-green;
+                color: $color-darkgreen;
+                right: 15px;
+                top: 15px;
+            }
         }
     }
 }
@@ -148,13 +171,13 @@
     background-color: $color-footer;
     color: $color-white;
     &--ul{
+        @extend %padding;
         margin-top: 16px;
-        padding: 16px;
         list-style: none;
     }
         &--logo{
-            font-size: 20px;
-            font-family: Shrikhand, sans-serif;
+            @extend %fontfamily;
+            @extend %fontsize;
             padding: 8px;
             margin-bottom: 8px;
         }
