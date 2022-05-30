@@ -92,7 +92,7 @@
                 color: $color-darkgrey;
             } 
 }
-.restaurants{
+.restaurants {
     @include padding-32-16;
     display: flex;
     flex-direction: column;
@@ -106,7 +106,7 @@
         flex-direction: row;
         flex-wrap: wrap;
         gap: 32px;
-        .article{
+        .article {
             @include responsive-article;
             @include bot-boxshadow;
             display: flex;
@@ -115,31 +115,44 @@
             height: 340px;
             border-radius: 25px;
             position: relative;
-            &--link{
+            &--link {
                 color: inherit;
                 text-decoration: none;
             }
-            &--text{
+            &--text {
                 display: flex;
                 flex-direction: column;
                 padding: 10px 14px;
                 font-size: 20px;
-                h3{
+                h3 {
                     margin-bottom: 8px;
                 }
             }
 
             // ICONE HEART
-            .fa-heart {
+            .heart{
                 position: absolute;
-                font-size: 25px;
-                right: 40px;
-                bottom: 35px;
-                mix-blend-mode: lighten;
-                &:hover{
-                    color: $color-purple
+                bottom: 30px;
+                right: 60px;
+                
+                .fa-heart {
+                    font-size: 30px;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                }
+                .fa-solid{
+                    color: transparent;
+                    background-image:linear-gradient(to bottom right,$color-pink,$color-purple);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    opacity: 0;
+                }
+                &:hover .fa-solid{
+                    opacity: 1;
                 }
             }
+            
 
             // IMG ARTICLE
             &--img{
