@@ -79,11 +79,12 @@
   cursor: pointer;
   position: absolute;
   right: 70px;
-  top: 65px;
+  top: 82px;
 }
 .menu .heart .fa-heart {
   font-size: 30px;
   position: absolute;
+  transform: translateY(-50%);
   bottom: 0;
   left: 0;
 }
@@ -93,9 +94,11 @@
   background-clip: text;
   -webkit-background-clip: text;
   opacity: 0;
+  transition: all 200ms ease-in-out;
 }
 .menu .heart:hover .fa-solid {
   opacity: 1;
+  transform: translateY(-50%) scale(1.1);
 }
 .menu--entry {
   padding: 12px;
@@ -311,12 +314,13 @@
 }
 .restaurants--cards .article .heart {
   position: absolute;
-  bottom: 30px;
+  bottom: 15px;
   right: 60px;
 }
 .restaurants--cards .article .heart .fa-heart {
   font-size: 30px;
   position: absolute;
+  transform: translateY(-50%);
   bottom: 0;
   left: 0;
 }
@@ -326,9 +330,11 @@
   background-clip: text;
   -webkit-background-clip: text;
   opacity: 0;
+  transition: all 200ms ease-in-out;
 }
 .restaurants--cards .article .heart:hover .fa-solid {
   opacity: 1;
+  transform: translateY(-50%) scale(1.1);
 }
 .restaurants--cards .article--img {
   position: relative;

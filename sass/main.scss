@@ -132,12 +132,13 @@
             // ICONE HEART
             .heart{
                 position: absolute;
-                bottom: 30px;
+                bottom: 15px;
                 right: 60px;
                 
                 .fa-heart {
                     font-size: 30px;
                     position: absolute;
+                    transform: translateY(-50%);
                     bottom: 0;
                     left: 0;
                 }
@@ -147,9 +148,11 @@
                     background-clip: text;
                     -webkit-background-clip: text;
                     opacity: 0;
+                    transition: all 200ms ease-in-out;
                 }
                 &:hover .fa-solid{
                     opacity: 1;
+                    transform: translateY(-50%) scale(1.1) ;
                 }
             }
             
