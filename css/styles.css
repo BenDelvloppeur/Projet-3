@@ -22,6 +22,16 @@
   padding: 16px;
 }
 
+@keyframes appear {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 .header-page {
   padding: 12px 16px;
   position: relative;
@@ -120,6 +130,41 @@
     width: 100%;
   }
 }
+.menu--animation {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.menu--animation .delay-1 {
+  animation-delay: 100ms;
+}
+.menu--animation .delay-2 {
+  animation-delay: 200ms;
+}
+.menu--animation .delay-3 {
+  animation-delay: 300ms;
+}
+.menu--animation .delay-4 {
+  animation-delay: 400ms;
+}
+.menu--animation .delay-5 {
+  animation-delay: 500ms;
+}
+.menu--animation .delay-6 {
+  animation-delay: 600ms;
+}
+.menu--animation .delay-7 {
+  animation-delay: 700ms;
+}
+.menu--animation .delay-8 {
+  animation-delay: 800ms;
+}
+.menu--animation .delay-9 {
+  animation-delay: 900ms;
+}
+.menu--animation .delay-10 {
+  animation-delay: 1000ms;
+}
 .menu--text {
   font-size: 16px;
   font-weight: 400;
@@ -142,6 +187,8 @@
   position: relative;
   padding: 10px;
   border-radius: 10px;
+  animation: appear 2s;
+  animation-fill-mode: both;
 }
 .menu--card h4 {
   padding: 3px 0;
