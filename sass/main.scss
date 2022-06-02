@@ -19,6 +19,25 @@
 
 
 // HEADER
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background-color: $color-white;
+    height: 100vh;
+    inset: 0;
+    z-index: 1002;
+    opacity: 0.9;
+    animation: disappear 200ms;
+    animation-delay: $animation-duration;
+    animation-fill-mode: forwards;
+    i{
+        animation: spin $animation-duration;
+        color: $color-purple;
+    }
+    
+}
 .header {
     @extend %padding;
     @include bot-boxshadow($color: $color-grey);

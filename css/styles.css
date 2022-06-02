@@ -22,6 +22,14 @@
   padding: 16px;
 }
 
+@keyframes disappear {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
 @keyframes appear {
   0% {
     transform: translateY(50%);
@@ -30,6 +38,11 @@
   100% {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }
 .header-page {
@@ -181,6 +194,7 @@
   bottom: 0px;
 }
 .menu--card {
+  overflow: hidden;
   box-shadow: 0 0 8px 0 darkgrey;
   cursor: pointer;
   height: 65px;
@@ -196,8 +210,21 @@
 .menu--card p {
   font-size: 14px;
 }
+.menu--item {
+  position: absolute;
+  right: 0px;
+  background-color: #99e2d0;
+  margin: -52px -72px -16px 16px;
+  width: 72px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 0.5s;
+}
 .menu--price {
   font-size: 14px;
+  margin-left: auto;
   font-weight: bold;
   color: rgb(97, 96, 96);
   position: absolute;
@@ -218,6 +245,25 @@
   font-family: Roboto, sans-serif;
   margin: 0;
   padding: 0;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background-color: #ffffff;
+  height: 100vh;
+  inset: 0;
+  z-index: 1002;
+  opacity: 0.9;
+  animation: disappear 200ms;
+  animation-delay: 1.5s;
+  animation-fill-mode: forwards;
+}
+.loader i {
+  animation: spin 1.5s;
+  color: #9356dc;
 }
 
 .header {
