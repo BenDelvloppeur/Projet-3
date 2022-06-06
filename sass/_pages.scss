@@ -1,155 +1,181 @@
-@import '_extensions.scss';
-@import '_animation.scss';
+@import "_extensions.scss";
+@import "_animation.scss";
 
 .header-page {
-    padding: 12px 16px;
-    position: relative;
-    z-index: 1000;
-    
-    &--logo{
-        text-align: center;
-        @extend %fontfamily;
-        text-decoration: none;
-        color: inherit;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        .fa-arrow-left{
-            font-size: 24px;
-            position: absolute;
-            left: 5px;
-            top: 12px;
-            z-index: 1001;
+  padding: 12px 16px;
+  position: relative;
+  z-index: 1000;
 
-        }
+  &--logo {
+    text-align: center;
+    @extend %fontfamily;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    .fa-arrow-left {
+      font-size: 24px;
+      position: absolute;
+      left: 5px;
+      top: 12px;
+      z-index: 1001;
     }
+  }
 }
 .background-img {
-    img {
-        width: 100%;
-        height: 500px;
-        object-fit: cover;
-        @include responsive-pages;
-    }
+  img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    @include responsive-pages;
+  }
 }
-.menu{
+.menu {
+  display: flex;
+  justify-content: center;
+
+  &--contenair {
+    width: 100%;
+    position: relative;
+    margin-bottom: -80px;
+    top: -64px;
+    background-color: $color-white;
+    border-radius: 32px 32px 0 0;
+    max-width: 1300px;
+    @include bot-boxshadow;
+  }
+  &--div {
+    padding: 34px 16px 0px 16px;
+  }
+  &--title {
+    @extend %fontfamily;
+    padding-left: 8px;
+  }
+  .heart {
+    cursor: pointer;
+    position: absolute;
+    right: 70px;
+    top: 82px;
+    @include heart;
+  }
+
+  &--entry {
+    padding: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    gap: 48px;
+  }
+  &--column {
+    @include responsive-cards;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  &--animation {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    @for $i from 1 through 10 {
+      .delay-#{$i} {
+        animation-delay: 100ms * $i;
+      }
+    }
+  }
+
+  &--text {
+    font-size: 16px;
+    font-weight: 400;
+    padding: 8px 0px 8px 8px;
+    position: relative;
+    &::after {
+      content: "";
+      width: 40px;
+      height: 4px;
+      background-color: $color-green;
+      position: absolute;
+      left: 8px;
+      bottom: 0px;
+    }
+  }
+  &--card {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    @include bot-boxshadow;
+    cursor: pointer;
+    height: 65px;
+    position: relative;
+    border-radius: 10px;
+    animation: appear 2s;
+    animation-fill-mode: both;
+    &:hover {
+      .menu--item {
+        animation: item-card 0.5s;
+        animation-fill-mode: forwards;
+      }
+      i {
+        transform: rotate(+180deg);
+        animation: icon-card 0.5s;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+  &--card-row {
+    display: flex;
+    margin: 10px;
+    flex-direction: row;
+    width: 100%;
+    h4 {
+      padding: 3px 0;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+  &--card-column {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  &--price {
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    font-weight: bold;
+    color: $color-darkgrey;
+  }
+  &--item {
+    transition: width 1s;
+    background-color: $color-green;
+    width: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    i {
+      background-color: $color-white;
+      color: $color-green;
+      padding: 4px;
+      border-radius: 10px;
+      opacity: 0;
+    }
+  }
+  &--center {
+    padding: 16px;
     display: flex;
     justify-content: center;
-    
-    &--contenair{
-        width: 100%;
-        position: relative;
-        margin-bottom: -80px;
-        top: -64px;
-        background-color: $color-white;
-        border-radius: 32px 32px 0 0;
-        max-width: 1300px;
-        @include bot-boxshadow;
+    button {
+      padding: 16px 48px;
     }
-    &--div{
-        padding: 34px 16px 0px 16px;
-    }
-    &--title{
-       @extend %fontfamily;
-       padding-left: 8px;
-    }
-    .heart{
-        cursor: pointer;
-        position: absolute;
-        right: 70px;
-        top: 82px;
-        @include heart;
-    }
-    
-    &--entry {
-        padding: 12px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        flex-direction: row;
-        width: 100%;
-        gap: 48px;
-    }
-    &--column{
-        @include responsive-cards;
-        width: 30%;
-        display: flex;
-        flex-direction: column;
-        gap: 16px
-    }
-    &--animation {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        @for $i from 1 through 10 {
-            .delay-#{$i} {
-                animation-delay: 100ms*$i;
-            }
-            
-        }    
-    }
-    
-    &--text{
-        font-size: 16px;
-        font-weight: 400;
-        padding: 8px 0px 8px 8px;
-        position: relative;
-        &::after {
-            content: "";
-            width: 40px;
-            height: 4px;
-            background-color: $color-green;
-            position: absolute;
-            left: 8px;
-            bottom: 0px;
-        }
-    }
-    &--card {
-        overflow: hidden;
-        @include bot-boxshadow;
-        cursor: pointer;
-        height: 65px;
-        position: relative;
-        padding: 10px;
-        border-radius: 10px;
-        animation: appear 2s;
-        animation-fill-mode: both;
-        h4{
-            padding: 3px 0;
-        }
-        p{
-            font-size: 14px;
-        }
-    }
-    &--item{
-        position: absolute;
-        right: 0px;
-        background-color: #99e2d0;
-        margin: -52px -72px -16px 16px;
-        width: 72px;
-        padding: 25px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition-duration: .5s;
-        
-    }
-    &--price {
-        font-size: 14px;
-        margin-left: auto;
-        font-weight: bold;
-        color: $color-darkgrey;
-        position: absolute;
-        right: 20px;
-        bottom: 14px;
-    }
-    &--center {
-        padding: 16px;
-        display: flex;
-        justify-content: center;
-        button{
-            padding: 16px 48px;
-        }
-    }
+  }
 }

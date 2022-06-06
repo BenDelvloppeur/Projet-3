@@ -30,10 +30,16 @@
     <!-- MAIN -->
     <main class="wrapper">
       <!-- LOCALISATION -->
-      <section class="geo-loc">
+      <div class="geo-loc">
         <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-        <span class="geo-loc--text">Paris, Belleville</span>
-      </section>
+        <form class="searchform">
+          <input
+            class="geo-loc--input"
+            type="search"
+            placeholder="Paris, Belleville"
+          />
+        </form>
+      </div>
 
       <!-- TEXT + BUTTON -->
       <section class="top-bar">
@@ -44,9 +50,7 @@
         <p class="top-bar--text">
           Découvrez des restaurants d'exception, séléctionnés par nos soins.
         </p>
-        <a href="#link-restaurants"
-          ><button class="top-bar--button">Explorer nos restaurants</button></a
-        >
+        <button class="top-bar--button">Explorer nos restaurants</button>
       </section>
 
       <!-- NAV BAR -->
@@ -131,7 +135,7 @@
             </a>
           </article>
           <article class="article">
-            <a href="./view/le-délice-des-sens.html" class="article--link">
+            <a href="./view/le-delice-des-sens.html" class="article--link">
               <div class="article--img">
                 <img
                   src="./assets/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
@@ -153,7 +157,9 @@
     </main>
     <footer class="footer">
       <ul class="footer--ul">
-        <span class="footer--logo">ohmyfood</span>
+        <li>
+          <h3 class="footer--logo">ohmyfood</h3>
+        </li>
         <li class="footer--list">
           <a href="" class="footer--link"
             ><i class="fa-solid fa-utensils"></i>Proposer un restaurant</a
@@ -168,7 +174,7 @@
           <a href="" class="footer--link">Mentions légales</a>
         </li>
         <li class="footer--list">
-          <a href="" class="footer--link">Contact</a>
+          <a href="mailto:contact@ohmyfood.com" class="footer--link">Contact</a>
         </li>
       </ul>
     </footer>

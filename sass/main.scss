@@ -1,237 +1,249 @@
 // IMPORT VARIABLES
-@import '_variable.scss';
+@import "_variable.scss";
 
 // IMPORT MIXINS
-@import '_mixins.scss';
+@import "_mixins.scss";
 
 // IMPORT EXTENSIONS
-@import '_extensions.scss';
+@import "_extensions.scss";
 
 // IMPORT PAGES
-@import '_pages.scss';
+@import "_pages.scss";
 
 * {
-    box-sizing: border-box;
-    font-family: Roboto ,sans-serif;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
 }
-
 
 // HEADER
 .loader {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    background-color: $color-white;
-    height: 100vh;
-    inset: 0;
-    z-index: 1002;
-    opacity: 0.9;
-    animation: disappear 200ms;
-    animation-delay: $animation-duration;
-    animation-fill-mode: forwards;
-    i{
-        animation: spin $animation-duration;
-        color: $color-purple;
-    }
-    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background-color: $color-white;
+  height: 100vh;
+  inset: 0;
+  z-index: 1002;
+  opacity: 0.9;
+  animation: disappear 200ms;
+  animation-delay: $animation-duration;
+  animation-fill-mode: forwards;
+  i {
+    animation: spin $animation-duration;
+    color: $color-purple;
+  }
 }
 .header {
-    @extend %padding;
-    @include bot-boxshadow($color: $color-grey);
-    position: relative;
-    z-index: 1000;
-    
-    &--logo{
-        text-align: center;
-        @extend %fontfamily;
-    }
+  @extend %padding;
+  @include bot-boxshadow($color: $color-grey);
+  position: relative;
+  z-index: 1000;
+
+  &--logo {
+    text-align: center;
+    @extend %fontfamily;
+  }
 }
 .geo-loc {
-    @include flex-top;
-    padding: 20px 16px;
-    background-color: $backgrey;
+  @include flex-top;
+  padding: 20px 16px;
+  background-color: $backgrey;
 
-    &--text{
-        @extend %fontsize;
-        font-weight: bold;
+  &--input {
+    @extend %fontsize;
+    font-weight: bold;
+    border: none;
+    background-color: $backgrey;
+    outline: none;
+    width: 155px;
+    color: $color-darkgrey;
+    :focus {
+      border: none;
     }
+  }
 }
-.top-bar{
-    @include flex-top;
-    @include padding-32-16;
-    flex-direction: column;
-    &--text{
-        text-align: center;
-    }
-    &--button{
-        @include button-purple;
-    }
+.top-bar {
+  @include flex-top;
+  @include padding-32-16;
+  flex-direction: column;
+  &--text {
+    text-align: center;
+  }
+  &--button {
+    @include button-purple;
+  }
 }
-.nav-bar{
-    @include padding-32-16;
-    flex-direction: column;
-    &--text{
-        padding: 0 0px 32px;
+.nav-bar {
+  @include padding-32-16;
+  flex-direction: column;
+  &--text {
+    padding: 0 0px 32px;
+  }
+  ol {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style: none;
+    counter-reset: compteList;
+  }
+  &--list {
+    @include responsive-list;
+    @extend %padding;
+    width: 28%;
+    margin: 0px 0px 0px 32px;
+    box-shadow: 1px 5px 11px 0px $color-grey;
+    border-radius: 16px;
+    position: relative;
+    &::before {
+      counter-increment: compteList 1;
+      content: counter(compteList) " ";
+      background: #9356dc;
+      height: 1.5rem;
+      width: 1.5rem;
+      border-radius: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      position: absolute;
+      left: -14px;
     }
-    ol{
-        @include flex-top;
-        flex-wrap: wrap;
-        align-items: center;
-        list-style: none;
-        counter-reset: compteList;
-    }
-        &--list{
-            @include responsive-list;
-            @extend %padding;
-            width: 28%;
-            margin: 0px 0px 0px 32px;
-            box-shadow: 1px 5px 11px 0px $color-grey;
-            border-radius: 16px;
-            position: relative;
-            &::before {
-                counter-increment: compteList 1;
-                content: counter(compteList) " ";
-                background: #9356dc;
-                height: 1.5rem;
-                width: 1.5rem;
-                border-radius: 100px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                color: #fff;
-                position: absolute;
-                left: -14px;             
-            }
-            }
-            i{
-                margin: 0px 16px;
-                color: $color-darkgrey;
-            } 
+  }
+  i {
+    margin: 0px 16px;
+    color: $color-darkgrey;
+  }
 }
 .restaurants {
-    @include padding-32-16;
+  @include padding-32-16;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  &--text {
+    padding: 0 0 32px;
+  }
+  &--cards {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    flex-direction: row;
     flex-wrap: wrap;
-    &--text{
-        padding: 0 0 32px;
-    }
-    &--cards{
+    gap: 32px;
+    .article {
+      @include responsive-article;
+      @include bot-boxshadow;
+      display: flex;
+      flex-direction: column;
+      width: 48%;
+      height: 340px;
+      border-radius: 25px;
+      position: relative;
+      &--link {
+        color: inherit;
+        text-decoration: none;
+      }
+      &--text {
         display: flex;
-        justify-content: center;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 32px;
-        .article {
-            @include responsive-article;
-            @include bot-boxshadow;
-            display: flex;
-            flex-direction: column;
-            width: 46%;
-            height: 340px;
-            border-radius: 25px;
-            position: relative;
-            &--link {
-                color: inherit;
-                text-decoration: none;
-            }
-            &--text {
-                display: flex;
-                flex-direction: column;
-                padding: 10px 14px;
-                font-size: 20px;
-                h3 {
-                    margin-bottom: 8px;
-                }
-            }
-
-            // ICONE HEART
-            .heart{
-                position: absolute;
-                bottom: 15px;
-                right: 60px;
-                
-                .fa-heart {
-                    font-size: 30px;
-                    position: absolute;
-                    transform: translateY(-50%);
-                    bottom: 0;
-                    left: 0;
-                }
-                .fa-solid{
-                    color: transparent;
-                    background-image:linear-gradient(to bottom right,$color-pink,$color-purple);
-                    background-clip: text;
-                    -webkit-background-clip: text;
-                    opacity: 0;
-                    transition: all 200ms ease-in-out;
-                }
-                &:hover .fa-solid{
-                    opacity: 1;
-                    transform: translateY(-50%) scale(1.1) ;
-                }
-            }
-            
-
-            // IMG ARTICLE
-            &--img{
-                position: relative;
-                img{
-                    @include responsive-img;
-                    object-fit: cover;
-                    width: 100%;
-                    height: 250px;
-                    border-radius: 25px 25px 0px 0px;
-                }
-            }
-
-            // "NOUVEAU" BUTTON
-            &--new{
-                @include bot-boxshadow;
-                font-size: 14px;
-                padding: 6px 10px;
-                position: absolute;
-                background-color: $color-green;
-                color: $color-darkgreen;
-                right: 15px;
-                top: 15px;
-            }
+        flex-direction: column;
+        padding: 10px 14px;
+        font-size: 20px;
+        h3 {
+          margin-bottom: 8px;
         }
+      }
+
+      // ICONE HEART
+      .heart {
+        position: absolute;
+        bottom: 15px;
+        right: 60px;
+
+        .fa-heart {
+          font-size: 30px;
+          position: absolute;
+          transform: translateY(-50%);
+          bottom: 0;
+          left: 0;
+        }
+        .fa-solid {
+          color: transparent;
+          background-image: linear-gradient(
+            to bottom right,
+            $color-pink,
+            $color-purple
+          );
+          background-clip: text;
+          -webkit-background-clip: text;
+          opacity: 0;
+          transition: all 200ms ease-in-out;
+        }
+        &:hover .fa-solid {
+          opacity: 1;
+          transform: translateY(-50%) scale(1.1);
+        }
+      }
+
+      // IMG ARTICLE
+      &--img {
+        position: relative;
+        img {
+          @include responsive-img;
+          object-fit: cover;
+          width: 100%;
+          height: 250px;
+          border-radius: 25px 25px 0px 0px;
+        }
+      }
+
+      // "NOUVEAU" BUTTON
+      &--new {
+        @include bot-boxshadow;
+        font-size: 14px;
+        padding: 6px 10px;
+        position: absolute;
+        background-color: $color-green;
+        color: $color-darkgreen;
+        right: 15px;
+        top: 15px;
+      }
     }
+  }
 }
 .footer {
-    background-color: $color-footer;
-    color: $color-white;
-    &--ul{
-        @extend %padding;
-        margin-top: 16px;
-        list-style: none;
+  background-color: $color-footer;
+  color: $color-white;
+  &--ul {
+    @extend %padding;
+    margin-top: 16px;
+    list-style: none;
+  }
+  &--logo {
+    @extend %fontfamily;
+    @extend %fontsize;
+    padding: 8px;
+    font-weight: lighter;
+    margin-bottom: 8px;
+  }
+  &--list {
+    margin: 10px;
+  }
+  &--link {
+    text-decoration: none;
+    color: inherit;
+    .fa-utensils {
+      margin-right: 16px;
+      margin-top: 8px;
     }
-        &--logo{
-            @extend %fontfamily;
-            @extend %fontsize;
-            padding: 8px;
-            margin-bottom: 8px;
-        }
-        &--list{
-            margin: 10px;
-        }
-        &--link{
-            text-decoration: none;
-            color: inherit;
-            .fa-utensils{
-                margin-right: 16px;
-                margin-top: 8px;
-            }
-            .fa-handshake-angle{
-                margin-right: 10px;
-            }
-            }
-                &--link:hover{
-                    text-decoration: underline;
-                }
+    .fa-handshake-angle {
+      margin-right: 10px;
+    }
+  }
+  &--link:hover {
+    text-decoration: underline;
+  }
 }
-    

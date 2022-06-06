@@ -1,76 +1,86 @@
 @mixin bot-boxshadow($color: $color-grey) {
-    box-shadow: 0 0 8px 0 $color;
+  box-shadow: 0 0 8px 0 $color;
 }
 @mixin flex-top {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
 }
 @mixin heart {
-        .fa-heart {
-            font-size: 30px;
-            position: absolute;
-            transform: translateY(-50%);
-            bottom: 0;
-            left: 0;
-        }
-        .fa-solid{
-            color: transparent;
-            background-image:linear-gradient(to bottom right,$color-pink,$color-purple);
-            background-clip: text;
-            -webkit-background-clip: text;
-            opacity: 0;
-            transition: all 200ms ease-in-out;
-        }
-        &:hover .fa-solid{
-            opacity: 1;
-            transform: translateY(-50%) scale(1.1) ;
-        }
-    }
-@mixin button-purple {
-    cursor: pointer;
-        margin: 16px 0px 16px 0px;
-        font-size: 16px ;
-        color: $color-white;
-        padding: 16px;
-        border-radius: 32px;
-        border: 0px;
-        background-image:
-    linear-gradient(
+  .fa-heart {
+    font-size: 30px;
+    position: absolute;
+    transform: translateY(-50%);
+    bottom: 0;
+    left: 0;
+  }
+  .fa-solid {
+    color: transparent;
+    background-image: linear-gradient(
       to bottom right,
-      $color-pink,$color-purple);
-      box-shadow: 1px 5px 11px 0px $color-grey;
+      $color-pink,
+      $color-purple
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    opacity: 0;
+    transition: all 200ms ease-in-out;
+  }
+  &:hover .fa-solid {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+  }
+}
+@mixin button-purple {
+  cursor: pointer;
+  margin: 16px 0px 16px 0px;
+  font-size: 16px;
+  color: $color-white;
+  padding: 16px;
+  border-radius: 32px;
+  border: 0px;
+  background-image: linear-gradient(
+    to bottom right,
+    $color-pink,
+    $color-purple
+  );
+
+  &:hover {
+    transition-duration: 200ms;
+    background-color: $color-white;
+    box-shadow: 0.25rem 0.25rem 10px rgb(0 0 0 / 50%);
+  }
 }
 @mixin padding-32-16 {
-    padding: 32px 16px;
+  padding: 32px 16px;
 }
 @mixin responsive-list {
-    @media (max-width: 1020px){
-        width: 100%;
-        min-width: 300px;
-        margin-left: 14px; 
-    }
+  @media (max-width: 1020px) {
+    width: 100%;
+    min-width: 285px;
+    margin-left: 8px;
+  }
 }
 @mixin responsive-article {
-    @media (max-width: 1020px){
-        width: 100%;
-        min-width: 300px; 
-        height: 270px;
-    } 
-}    
+  @media (max-width: 1020px) {
+    width: 100%;
+    min-width: 285px;
+    height: 270px;
+  }
+}
 @mixin responsive-img {
-    @media (max-width: 1020px){
-        height: 180px;
-    } 
+  @media (max-width: 1020px) {
+    height: 180px;
+  }
 }
 @mixin responsive-pages {
-    @media (max-width: 1020px){
-        height: 280px;
-    } 
-}                
+  @media (max-width: 1020px) {
+    height: 280px;
+  }
+}
 @mixin responsive-cards {
-    @media (max-width:1020px){
-        width: 100%;
-    }
+  @media (max-width: 1020px) {
+    width: 100%;
+  }
 }
