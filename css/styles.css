@@ -45,11 +45,6 @@
     transform: rotate(360deg);
   }
 }
-@keyframes item-card {
-  to {
-    width: 25%;
-  }
-}
 @keyframes icon-card {
   to {
     transform: rotate(0deg);
@@ -217,8 +212,10 @@
   animation-fill-mode: both;
 }
 .menu--card:hover .menu--item {
-  animation: item-card 0.5s;
-  animation-fill-mode: forwards;
+  width: 20%;
+}
+.menu--card:hover .menu--card-row {
+  width: 80%;
 }
 .menu--card:hover i {
   transform: rotate(180deg);
@@ -226,36 +223,49 @@
   animation-fill-mode: forwards;
 }
 .menu--card-row {
+  transition: width 450ms;
   display: flex;
   margin: 10px;
   flex-direction: row;
   width: 100%;
+  text-overflow: ellipsis;
 }
 .menu--card-row h4 {
   padding: 3px 0;
-}
-.menu--card-row p {
-  font-size: 14px;
-}
-.menu--card-column {
-  display: flex;
-  flex-direction: column;
-  width: 80%;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
+.menu--card-row p {
+  font-size: 14px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.menu--card-column {
+  display: flex;
+  flex-direction: column;
+  width: 270px;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-right: auto;
+}
+@media (max-width: 430px) {
+  .menu--card-column {
+    width: 255px;
+  }
+}
 .menu--price {
   display: flex;
+  width: 20%;
   font-size: 14px;
   align-items: center;
-  justify-content: center;
-  margin-left: auto;
+  justify-content: flex-end;
   font-weight: bold;
   color: rgb(97, 96, 96);
 }
 .menu--item {
-  transition: width 1s;
+  transition: width 450ms;
   background-color: #99e2d0;
   width: 0%;
   display: flex;
@@ -350,6 +360,7 @@
   font-size: 16px;
   color: #ffffff;
   padding: 16px;
+  transition: all 350ms;
   border-radius: 32px;
   border: 0px;
   background-image: linear-gradient(to bottom right, #ff79da, #9356dc);

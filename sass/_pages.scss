@@ -116,8 +116,10 @@
     animation-fill-mode: both;
     &:hover {
       .menu--item {
-        animation: item-card 0.5s;
-        animation-fill-mode: forwards;
+        width: 20%;
+      }
+      .menu--card-row{
+        width: 80%;
       }
       i {
         transform: rotate(+180deg);
@@ -127,36 +129,45 @@
     }
   }
   &--card-row {
+    transition: width 450ms;
     display: flex;
     margin: 10px;
     flex-direction: row;
     width: 100%;
+    text-overflow: ellipsis;
     h4 {
       padding: 3px 0;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
     }
     p {
       font-size: 14px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
     }
   }
   &--card-column {
     display: flex;
     flex-direction: column;
-    width: 80%;
-    text-overflow: ellipsis;
+    width: 270px;
     overflow: hidden;
     white-space: nowrap;
+    margin-right: auto;
+    @include responsive-cards-column-width;
   }
   &--price {
     display: flex;
+    width: 20%;
     font-size: 14px;
     align-items: center;
-    justify-content: center;
-    margin-left: auto;
+    justify-content: flex-end;
     font-weight: bold;
     color: $color-darkgrey;
   }
   &--item {
-    transition: width 1s;
+    transition: width 450ms;
     background-color: $color-green;
     width: 0%;
     display: flex;
